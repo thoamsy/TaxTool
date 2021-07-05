@@ -36,6 +36,14 @@ struct TaxForm: View {
   @AppStorage("shiye") private var shiye: Int = 2
   @AppStorage("yiliao") private var yiliao: Int = 3
 
+
+  var numberFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .decimal
+    formatter.maximumFractionDigits = 3
+    return formatter
+  }()
+
   var body: some View {
     NavigationView {
       Form {
@@ -52,14 +60,17 @@ struct TaxForm: View {
             }
           }
         }
-        Section(header: Text("基本工资")) {
-          TextField("基本工资", text: $baseSalaries)
-            .textContentType(.telephoneNumber)
+        Section(header: Text("💰 基本工资")) {
+          TextField(text: $baseSalaries) {
+            Label("每月工资", systemImage: "yensign.circle")
+          }
+           .textContentType(.creditCardNumber)
         }
+        .textContentType(.creditCardNumber)
 
         Section(header: Text("五险一金")) {
           EasyPicker(
-            label: "💰 公积金",
+            label: "🏠 公积金",
             range: 0..<21,
             selection: $gongjijin
           )
@@ -85,8 +96,13 @@ struct TaxForm: View {
         }
       }
       .navigationBarTitle("税率计算")
+      .ignoresSafeArea(.keyboard)
     }
   }
+}
+
+extension TaxForm {
+
 }
 
 struct ContentView_Previews: PreviewProvider {
