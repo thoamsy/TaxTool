@@ -111,7 +111,7 @@ struct TaxForm: View {
       .sheet(isPresented: $visibleSetting) {
         TaxBaseSetting()
       }
-      .navigationBarTitle("税率计算")
+      .navigationBarTitle("税率计算", displayMode: .inline)
       .navigationBarItems(trailing: Button(action: {
         visibleSetting.toggle()
       }) {
