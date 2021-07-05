@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		5905F65626935300006C5A18 /* TaxToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F648269352FF006C5A18 /* TaxToolApp.swift */; };
 		5905F65726935300006C5A18 /* TaxToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F648269352FF006C5A18 /* TaxToolApp.swift */; };
-		5905F65826935300006C5A18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F649269352FF006C5A18 /* ContentView.swift */; };
-		5905F65926935300006C5A18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F649269352FF006C5A18 /* ContentView.swift */; };
+		5905F65826935300006C5A18 /* TaxForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F649269352FF006C5A18 /* TaxForm.swift */; };
+		5905F65926935300006C5A18 /* TaxForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F649269352FF006C5A18 /* TaxForm.swift */; };
 		5905F65A26935300006C5A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5905F64A26935300006C5A18 /* Assets.xcassets */; };
 		5905F65B26935300006C5A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5905F64A26935300006C5A18 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5905F648269352FF006C5A18 /* TaxToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxToolApp.swift; sourceTree = "<group>"; };
-		5905F649269352FF006C5A18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5905F649269352FF006C5A18 /* TaxForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxForm.swift; sourceTree = "<group>"; };
 		5905F64A26935300006C5A18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5905F64F26935300006C5A18 /* TaxTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5905F65526935300006C5A18 /* TaxTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				5905F648269352FF006C5A18 /* TaxToolApp.swift */,
-				5905F649269352FF006C5A18 /* ContentView.swift */,
+				5905F649269352FF006C5A18 /* TaxForm.swift */,
 				5905F64A26935300006C5A18 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -166,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5905F65826935300006C5A18 /* ContentView.swift in Sources */,
+				5905F65826935300006C5A18 /* TaxForm.swift in Sources */,
 				5905F65626935300006C5A18 /* TaxToolApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,7 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5905F65926935300006C5A18 /* ContentView.swift in Sources */,
+				5905F65926935300006C5A18 /* TaxForm.swift in Sources */,
 				5905F65726935300006C5A18 /* TaxToolApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
