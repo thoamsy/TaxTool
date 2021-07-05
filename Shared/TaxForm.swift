@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct EasyPicker<T>: View where T: Hashable {
   var label: String
@@ -21,6 +22,14 @@ struct EasyPicker<T>: View where T: Hashable {
   }
 }
 
+extension NumberFormatter {
+  static var currency: NumberFormatter {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter
+  }
+}
+
 struct TaxForm: View {
   enum TaxType: Int, CaseIterable {
     case salaries
@@ -28,6 +37,7 @@ struct TaxForm: View {
     case remuneration
     case royalties
   }
+  @State var visibleSetting = false
 
   @AppStorage("taxtype") private var taxType: TaxType = .salaries
   @AppStorage("basesalaries") private var baseSalaries: String = ""
@@ -36,13 +46,6 @@ struct TaxForm: View {
   @AppStorage("shiye") private var shiye: Int = 2
   @AppStorage("yiliao") private var yiliao: Int = 3
 
-
-  var numberFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.maximumFractionDigits = 3
-    return formatter
-  }()
 
   var body: some View {
     NavigationView {
@@ -61,12 +64,19 @@ struct TaxForm: View {
           }
         }
         Section(header: Text("💰 基本工资")) {
-          TextField(text: $baseSalaries) {
+          TextField(value: $baseSalaries, formatter: NumberFormatter.currency) {
             Label("每月工资", systemImage: "yensign.circle")
           }
-           .textContentType(.creditCardNumber)
+          .keyboardType(.numberPad)
+          .textContentType(.creditCardNumber)
+          .onReceive(Just(baseSalaries)) { newValue in
+            let filtered = newValue.filter { "0123456789".contains($0) }
+
+            if filtered != newValue {
+              baseSalaries = filtered
+            }
+          }
         }
-        .textContentType(.creditCardNumber)
 
         Section(header: Text("五险一金")) {
           EasyPicker(
@@ -94,8 +104,19 @@ struct TaxForm: View {
 //            Text("💰 公积金: \(gongjijin)%")
 //          }
         }
+
+        Button("Confirm", action: {})
+          .disabled(baseSalaries.isEmpty)
+      }
+      .sheet(isPresented: $visibleSetting) {
+        TaxBaseSetting()
       }
       .navigationBarTitle("税率计算")
+      .navigationBarItems(trailing: Button(action: {
+        visibleSetting.toggle()
+      }) {
+        Label("设置", systemImage: "gear")
+      })
       .ignoresSafeArea(.keyboard)
     }
   }
@@ -108,5 +129,6 @@ extension TaxForm {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     TaxForm()
+      .preferredColorScheme(.dark)
   }
 }

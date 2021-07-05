@@ -13,6 +13,10 @@
 		5905F65926935300006C5A18 /* TaxForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F649269352FF006C5A18 /* TaxForm.swift */; };
 		5905F65A26935300006C5A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5905F64A26935300006C5A18 /* Assets.xcassets */; };
 		5905F65B26935300006C5A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5905F64A26935300006C5A18 /* Assets.xcassets */; };
+		5905F66526936503006C5A18 /* TaxBaseSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F66426936503006C5A18 /* TaxBaseSetting.swift */; };
+		5905F66626936503006C5A18 /* TaxBaseSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F66426936503006C5A18 /* TaxBaseSetting.swift */; };
+		5905F66B26936B9D006C5A18 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F66A26936B9D006C5A18 /* TestView.swift */; };
+		5905F66C26936B9D006C5A18 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905F66A26936B9D006C5A18 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,8 @@
 		5905F64A26935300006C5A18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5905F64F26935300006C5A18 /* TaxTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5905F65526935300006C5A18 /* TaxTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5905F66426936503006C5A18 /* TaxBaseSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxBaseSetting.swift; sourceTree = "<group>"; };
+		5905F66A26936B9D006C5A18 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,8 @@
 			children = (
 				5905F648269352FF006C5A18 /* TaxToolApp.swift */,
 				5905F649269352FF006C5A18 /* TaxForm.swift */,
+				5905F66A26936B9D006C5A18 /* TestView.swift */,
+				5905F66426936503006C5A18 /* TaxBaseSetting.swift */,
 				5905F64A26935300006C5A18 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -166,8 +174,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5905F66B26936B9D006C5A18 /* TestView.swift in Sources */,
 				5905F65826935300006C5A18 /* TaxForm.swift in Sources */,
 				5905F65626935300006C5A18 /* TaxToolApp.swift in Sources */,
+				5905F66526936503006C5A18 /* TaxBaseSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5905F66C26936B9D006C5A18 /* TestView.swift in Sources */,
 				5905F65926935300006C5A18 /* TaxForm.swift in Sources */,
 				5905F65726935300006C5A18 /* TaxToolApp.swift in Sources */,
+				5905F66626936503006C5A18 /* TaxBaseSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
