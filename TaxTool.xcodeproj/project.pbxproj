@@ -27,6 +27,7 @@
 		5905F65526935300006C5A18 /* TaxTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5905F66426936503006C5A18 /* TaxBaseSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxBaseSetting.swift; sourceTree = "<group>"; };
 		5905F66A26936B9D006C5A18 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		5905F66D2693ED48006C5A18 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +51,7 @@
 		5905F642269352FF006C5A18 = {
 			isa = PBXGroup;
 			children = (
+				5905F66D2693ED48006C5A18 /* README.md */,
 				5905F647269352FF006C5A18 /* Shared */,
 				5905F65026935300006C5A18 /* Products */,
 			);

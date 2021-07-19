@@ -10,15 +10,19 @@ import Combine
 
 struct EasyPicker<T>: View where T: Hashable {
   var label: String
+  var systemImage: String
   var range: Range<Int>
   var selection: Binding<T>
 
   var body: some View {
-    Picker(label, selection: selection) {
+    Picker(
+      selection: selection,
+      label: Label(label, systemImage: systemImage)
+    ) {
       ForEach(range, id: \.self) {
         Text("\($0)%").tag($0)
       }
-    }
+    }.listRowSeparator(.automatic)
   }
 }
 
@@ -80,22 +84,26 @@ struct TaxForm: View {
 
         Section(header: Text("五险一金")) {
           EasyPicker(
-            label: "🏠 公积金",
+            label: "公积金",
+            systemImage: "house",
             range: 0..<21,
             selection: $gongjijin
           )
           EasyPicker(
-            label: "👴 养老保险",
+            label: "养老保险",
+            systemImage: "tortoise",
             range: 0..<10,
             selection: $yanglao
           )
           EasyPicker(
-            label: "🏥 医疗保险",
+            label: "医疗保险",
+            systemImage: "cross.case",
             range: 0..<5,
             selection: $yiliao
           )
           EasyPicker(
-            label: "🥺 失业保险",
+            label: "失业保险",
+            systemImage: "figure.walk",
             range: 0..<5,
             selection: $shiye
           )
@@ -105,7 +113,10 @@ struct TaxForm: View {
 //          }
         }
 
-        Button("Confirm", action: {})
+        Button(
+          action: {},
+          label: { Label("Confirm", systemImage: "banknote") }
+        )
           .disabled(baseSalaries.isEmpty)
       }
       .sheet(isPresented: $visibleSetting) {
@@ -128,7 +139,10 @@ extension TaxForm {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    TaxForm()
-      .preferredColorScheme(.dark)
+    Group {
+      TaxForm()
+      TaxForm()
+        .preferredColorScheme(.dark)
+    }
   }
 }
